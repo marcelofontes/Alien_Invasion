@@ -25,13 +25,7 @@ class Alien(Sprite):
     def blitme(self):
         #desenha o alienigena em sua posicao atual
         self.screen.blit(self.image, self.rect)
-
-
-    def update(self):
-        #move o alienigena para a direita ou para a esquerda
-        self.x += (self.ai_settings.alien_speed_factor*self.ai_settings.fleet_direction)
-        self.rect.x = self.x
-
+   
 
     def check_edges(self):
         #devolve True se o alienigena estiver na borda da tela
@@ -41,4 +35,9 @@ class Alien(Sprite):
         else:
             return False
 
+        
+    def update(self):
+            #move o alienigena para a direita ou para a esquerda
+            self.x += (self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction)
+            self.rect.x = self.x
         

@@ -1,9 +1,11 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Ship():
+class Ship(Sprite):
    
 
     def __init__(self,ai_settings,screen):
+        super(Ship, self).__init__()
         #inicializa a espaçonave e define sua posição inicial
         self.screen = screen
         self.ai_settings = ai_settings      
@@ -34,3 +36,6 @@ class Ship():
     def blitme(self):
         #Desenha a espaçonave em sua posição atual
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        self.center = self.screen_rect.centerx
